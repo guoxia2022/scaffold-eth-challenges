@@ -273,7 +273,6 @@ function App(props) {
   const withdrawalTimeLeft = useContractReader(readContracts, "Staker", "withdrawalTimeLeft");
   console.log("⏳ Withdrawal Time Left:", withdrawalTimeLeft);
 
-
   // ** Listen for when the contract has been 'completed'
   const complete = useContractReader(readContracts, "ExampleExternalContract", "completed");
   console.log("✅ complete:", complete);
@@ -287,7 +286,7 @@ function App(props) {
   let completeDisplay = "";
   if (complete) {
     completeDisplay = (
-      <div style={{padding: 64, backgroundColor: "#eeffef", fontWeight: "bold", color: "rgba(0, 0, 0, 0.85)" }} >
+      <div style={{ padding: 64, backgroundColor: "#eeffef", fontWeight: "bold", color: "rgba(0, 0, 0, 0.85)" }}>
         -- 💀 Staking App Fund Repatriation Executed 🪦 --
         <Balance balance={exampleExternalContractBalance} fontSize={32} /> ETH locked!
       </div>
@@ -536,21 +535,21 @@ function App(props) {
               {claimPeriodLeft && humanizeDuration(claimPeriodLeft.toNumber() * 1000)}
             </div>
 
-            <div style={{ padding: 8, marginTop: 16, fontWeight: "bold"}}>
+            <div style={{ padding: 8, marginTop: 16, fontWeight: "bold" }}>
               <div>Withdrawal Period Left:</div>
               {withdrawalTimeLeft && humanizeDuration(withdrawalTimeLeft.toNumber() * 1000)}
             </div>
 
             <Divider />
 
-            <div style={{ padding: 8, fontWeight: "bold"}}>
+            <div style={{ padding: 8, fontWeight: "bold" }}>
               <div>Total Available ETH in Contract:</div>
               <Balance balance={stakerContractBalance} fontSize={64} />
             </div>
 
             <Divider />
 
-            <div style={{ padding: 8,fontWeight: "bold" }}>
+            <div style={{ padding: 8, fontWeight: "bold" }}>
               <div>ETH Locked 🔒 in Staker Contract:</div>
               <Balance balance={balanceStaked} fontSize={64} />
             </div>
@@ -646,7 +645,8 @@ function App(props) {
 
       <div style={{ marginTop: 32, opacity: 0.5 }}>
         {/* Add your address here */}
-        Created by <Address value={"Your...address"} ensProvider={mainnetProvider} fontSize={16} />
+        Created by
+        <Address value={"0xD7Ab1BA8fe4506A7bC8263e9b9042ad1c0c1f1B5"} ensProvider={mainnetProvider} fontSize={16} />
       </div>
 
       <div style={{ marginTop: 32, opacity: 0.5 }}>
