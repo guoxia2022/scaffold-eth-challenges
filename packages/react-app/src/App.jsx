@@ -434,7 +434,6 @@ function App(props) {
       console.log(`account changed!`);
       setInjectedProvider(new ethers.providers.Web3Provider(provider));
     });
-    // test
     // Subscribe to session disconnection
     provider.on("disconnect", (code, reason) => {
       console.log(code, reason);
